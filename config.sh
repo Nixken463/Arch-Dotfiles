@@ -39,7 +39,6 @@ setup_configs() {
             sudo mkdir -p /etc/sddm.conf.d
             echo -e "[Theme]\nCurrent=$(basename "$target_path")" | \
                 sudo tee /etc/sddm.conf.d/theme.conf.user > /dev/null
-            sudo systemctl enable sddm
         else
             echo "Symlinking $config → $target_path"
             mkdir -p "$(dirname "$target_path")"
