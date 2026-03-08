@@ -10,6 +10,10 @@ install_packages() {
         curl 
         wget
         python
+        eza 
+        fzf 
+        bat
+        ripgrep
         base-devel  # Required for building AUR packages
         neovim
         discord
