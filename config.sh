@@ -17,6 +17,7 @@ setup_configs() {
         ["cava"]="$CONFIG_DIR/cava"
         ["fastfetch"]="$CONFIG_DIR/fastfetch"
         ["hypr"]="$CONFIG_DIR/hypr"
+        ["kitty"]="$CONFIG_DIR/kitty"
         ["simple-sddm"]="/usr/share/sddm/themes/simple-sddm"
         ["noctalia"]="$HOME/.noctalia"
     )
