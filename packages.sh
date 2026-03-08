@@ -2,6 +2,8 @@
 install_packages() {
     echo "Installing packages..."
 
+    # Update system first
+    sudo pacman -Syu --noconfirm
 
     # List of packages to install
     packages=(
@@ -39,20 +41,18 @@ install_packages() {
         qt5-svg
     )
 
-      sudo pacman -Syu --noconfirm
-      sudo pacman -S --needed --noconfirm "${packages[@]}"
+    for pkg in "${packages[@]}"; do
+        if ! sudo pacman -S --noconfirm "$pkg"; then
+            echo "Failed to install $pkg. Continuing..."
+        fi
+    done
 
+    # Install yay (AUR helper)
     if ! command -v yay &> /dev/null; then
-      echo "Installing yay..."
-
-      tmpdir=$(mktemp -d)
-      git clone https://aur.archlinux.org/yay.git "$tmpdir/yay"
-      cd "$tmpdir/yay"
-      makepkg -si --noconfirm
-      cd ~
-
-      rm -rf "$tmpdir"
+        echo "Installing yay..."
+        sudo pacman -S --needed git base-devel && git clone https://aur.archlinux.org/yay.git && cd yay && makepkg -si
     fi
+
     # AUR packages (using yay)
     aur_packages=(
         # Example: spotify visual-studio-code-bin

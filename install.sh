@@ -33,6 +33,6 @@ main() {
     echo ""
     echo "✅ Dotfiles setup complete!"
     echo ""
-
+  }
 # Run main function
 main
