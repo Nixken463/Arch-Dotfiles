@@ -23,5 +23,7 @@ enable_services() {
         systemctl --user enable "$svc"
     done
 
+    #set fish as user shell
+    chsh -s /usr/bin/fish
     echo "Services enabled!"
 }

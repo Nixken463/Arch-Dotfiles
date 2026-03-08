@@ -28,7 +28,7 @@ main() {
         echo "Failed to enable services. Check errors above."
         exit 1
     fi
-
+    rm -rf yay
     # Step 3: Post-install messages
     echo ""
     echo "✅ Dotfiles setup complete!"

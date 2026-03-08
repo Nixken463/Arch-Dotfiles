@@ -9,8 +9,12 @@ install_packages() {
     packages=(
         git 
         gcc #c compiler
-        curl 
+        fish
+        curl
+        zoxide
         wget
+        nodejs
+        npm
         python
         eza 
         fzf 
@@ -25,6 +29,8 @@ install_packages() {
         kitty
         thunar
         ttf-jetbrains-mono-nerd
+        ttf-font-awesome
+        cava
         steam
         btop
         obsidian
