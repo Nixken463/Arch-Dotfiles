@@ -10,6 +10,7 @@ install_packages() {
         git 
         gcc #c compiler
         fish
+        fastfetch
         curl
         zoxide
         wget
